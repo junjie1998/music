@@ -6,9 +6,10 @@ import { getSizeImage } from '@/utils/format-utils'
 
 export default memo(function JJAlbumCover(props) {
   const { info, size = 130, width = 130, bgp = '-845px' } = props
+  // console.log(info)
   return (
     <AlbumWrapper size={size} width={width} bgp={bgp}>
-      <div className='album-image'>
+      <div className='album-image' title={info.name}>
         <img src={getSizeImage(info.picUrl, size)} alt='' />
         <a href='/abc' className='cover sprite_covor'>
           cjj

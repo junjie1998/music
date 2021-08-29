@@ -12,6 +12,8 @@ import JJHotRecommend from './c-cpns/hot-recommend'
 import JJNewAlbum from './c-cpns/new-album'
 import JJRecommendRanking from './c-cpns/recommend-ranking'
 
+import UserLogin from './c-cpns/user-login'
+
 function JJRecommend(props) {
   return (
     <RecommendWrapper>
@@ -22,7 +24,9 @@ function JJRecommend(props) {
           <JJNewAlbum />
           <JJRecommendRanking />
         </RecommendLeft>
-        <RecommendRight></RecommendRight>
+        <RecommendRight>
+          <UserLogin />
+        </RecommendRight>
       </Content>
     </RecommendWrapper>
   )

@@ -3,7 +3,7 @@ import React, { memo } from 'react'
 import { getSizeImage } from '@/utils/format-utils'
 import { TopRankingWrapper } from './style'
 
-import { getCurrentSongAction } from '@/pages/player/store'
+import { getCurrentSongAction, addPlayListAction } from '@/pages/player/store'
 import { useDispatch } from 'react-redux'
 
 export default memo(function JJTopRanking(props) {
@@ -14,6 +14,10 @@ export default memo(function JJTopRanking(props) {
 
   const playMusic = id => {
     dispatch(getCurrentSongAction(id))
+  }
+
+  const addMusic = id => {
+    dispatch(addPlayListAction(id))
   }
 
   return (
@@ -39,14 +43,21 @@ export default memo(function JJTopRanking(props) {
             <div key={item.id} className='list-item'>
               <div className='rank'>{index + 1}</div>
               <div className='info'>
-                <div className='name text-nowrap'>{item.name}</div>
+                <div className='name text-nowrap' title={item.name}>
+                  {item.name}
+                </div>
                 <div className='operate'>
                   <button
                     className='btn play sprite_02'
+                    title='播放'
                     onClick={e => playMusic(item.id)}
                   ></button>
-                  <button className='btn addto sprite_icon2'></button>
-                  <button className='btn favor sprite_02'></button>
+                  <button
+                    className='btn addto sprite_icon2'
+                    title='添加到播放列表'
+                    onClick={e => addMusic(item.id)}
+                  ></button>
+                  <button className='btn favor sprite_02' title='收藏'></button>
                 </div>
               </div>
             </div>

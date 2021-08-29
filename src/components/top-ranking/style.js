@@ -78,6 +78,7 @@ export const TopRankingWrapper = styled.div`
           flex: 1;
           &:hover {
             text-decoration: underline;
+            cursor: pointer;
           }
         }
 

@@ -25,7 +25,7 @@ export default memo(function JJTopBanner() {
   const bannerChange = useCallback((from, to) => {
     setTimeout(() => {
       setCurrentIndex(to)
-    }, 0)
+    })
   }, [])
 
   // const bgImage =

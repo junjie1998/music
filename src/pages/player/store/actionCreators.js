@@ -116,3 +116,24 @@ export const changeCurrentLyricIndexAction = currentLyricIndex => ({
   type: CHANGE_CURRENT_LYRIC_INDEX,
   currentLyricIndex
 })
+
+export const addPlayListAction = id => {
+  return (dispatch, getState) => {
+    // 1.根据id查找playList中是否存在该歌曲
+    const playList = getState().getIn(['player', 'playList'])
+    const songIndex = playList.findIndex(song => song.id === id)
+
+
+    // 2.判断是否找到了歌曲
+    let song = null
+    if (songIndex === -1) {
+        getSongDetail(id).then(res => {
+        // 将最新请求到的歌曲添加到播放列表中
+        song = res?.songs?.[0]
+        // console.log(song)
+        const newList = [...playList, song]
+        dispatch(dispatch(changePlayListAction(newList)))
+      })
+    }
+  }
+}

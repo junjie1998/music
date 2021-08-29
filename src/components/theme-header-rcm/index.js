@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { HeaderWrapper } from './style'
 
 const JJThemeHeaderRCM = memo(function (props) {
-  const { title, keywords, moreLink, keywordClick } = props
+  const { title, keywords, moreLink } = props
 
   return (
     <HeaderWrapper className='sprite_02'>
@@ -16,9 +16,9 @@ const JJThemeHeaderRCM = memo(function (props) {
           {keywords.map((item, index) => {
             return (
               <div className='item' key={item}>
-                <span className='link' onClick={e => keywordClick(item)}>
+                <a className='link' href={`/discover/playlist/?cat=${item}`}>
                   {item}
-                </span>
+                </a>
                 {index !== keywords.length - 1 && (
                   <span className='divider'>|</span>
                 )}
