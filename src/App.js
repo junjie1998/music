@@ -9,6 +9,7 @@ import store from '@/store'
 import JJAppHeader from 'components/app-header'
 import JJAppFooter from 'components/app-footer'
 import JJAppPlayerBar from './pages/player/app-player-bar'
+import MyBackTop from 'components/my-backtop'
 
 export default memo(function App() {
   return (
@@ -20,6 +21,7 @@ export default memo(function App() {
         </Suspense>
         <JJAppFooter />
         <JJAppPlayerBar />
+        <MyBackTop />
       </HashRouter>
     </Provider>
   )
