@@ -1,9 +1,11 @@
 import React, { memo } from 'react'
 
+import MyPagination from '@/components/my-pagination'
+
 export default memo(function JJSongs() {
   return (
     <div>
-      <h2>JJSongs</h2>
+      <MyPagination />
     </div>
   )
 })

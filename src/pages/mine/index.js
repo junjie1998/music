@@ -1,9 +1,17 @@
 import React, { memo } from 'react'
 
-export default memo(function JJMine () {
+import { MineWrapper } from './style'
+
+export default memo(function HYMine() {
   return (
-    <div>
-      <h2>JJDiscover</h2>
-    </div>
+    <MineWrapper>
+      <div className='content wrap-v2'>
+        <div className='pic'>
+          <a className='login' href='/#'>
+            立即登录
+          </a>
+        </div>
+      </div>
+    </MineWrapper>
   )
 })

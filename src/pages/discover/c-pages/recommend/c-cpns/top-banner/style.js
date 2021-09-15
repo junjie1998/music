@@ -18,6 +18,17 @@ export const BannerWrapper = styled.div`
 export const BannerLeft = styled.div`
   width: 730px;
 
+  .ant-carousel .slick-dots li button {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .ant-carousel .slick-dots li button:hover {
+    background-color: #c70c0c;
+  }
+  .ant-carousel .slick-dots li.slick-active button {
+    background-color: #c70c0c;
+  }
   .banner-item {
     overflow: hidden;
     height: 270px;

@@ -44,6 +44,7 @@ export default memo(function JJTopBanner() {
             autoplay
             ref={bannerRef}
             beforeChange={bannerChange}
+            // dots={'dotStyle'}
           >
             {state.banners.map((item, index) => {
               return (
